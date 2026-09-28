@@ -1,0 +1,24 @@
+services:
+  shell:
+    build:
+      context: .
+      dockerfile: apps/shell/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - characters
+      - character-detail
+
+  characters:
+    build:
+      context: .
+      dockerfile: apps/characters/Dockerfile
+    ports:
+      - "3001:80"
+
+  character-detail:
+    build:
+      context: .
+      dockerfile: apps/character-detail/Dockerfile
+    ports:
+      - "3002:80"

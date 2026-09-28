@@ -1,0 +1,19 @@
+{
+  "name": "rick-morty-micrtofrontends",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start": "concurrently --names shell,characters,detail \"npm run start -w @rick-morty/shell\" \"npm run start -w @rick-morty/characters\" \"npm run start -w @rick-morty/character-detail\"",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
